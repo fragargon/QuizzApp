@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_quizz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            style="@style/main_image"
+            android:contentDescription="@string/image_desc"
+            app:srcCompat="@drawable/java"/>
+
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            style="@style/main_textView"
+            android:text="@string/welcome" />
+
+        <TextView
+            android:id="@+id/tvWelcome1"
+            style="@style/main_textView"
+            android:text="@string/quizz" />
+
+
+        <EditText
+            android:id="@+id/editTextPlayer"
+            style="@style/editText_main"
+            android:layout_marginTop="38dp"
+            android:hint="@string/name" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/main_button"
+            android:text="@string/go" />
+
+        <TextView
+            android:id="@+id/source_url"
+            style="@style/textSourceUrl"
+            android:text="@string/source" />
+
+    </LinearLayout>
+
+
+</ScrollView>

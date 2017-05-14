@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_quizz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout style="@style/linear_layout_quizz">
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 1-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q1"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q1answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q1explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 2 -->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q2"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q2answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q2explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 3-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q3"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q3answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q3explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 4-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q4"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q4answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q4explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 5-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q5"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q5answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q5explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 6-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q6"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q6answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q6explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 7-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q7"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q7answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q7explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 8-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q8"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q8answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q8explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 9-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q9"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q9answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q9explain" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_solution">
+
+            <!-- Answer 10-->
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q10"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q10answer"/>
+
+            <TextView
+                style="@style/textView_solution"
+                android:text="@string/Q10explain" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
