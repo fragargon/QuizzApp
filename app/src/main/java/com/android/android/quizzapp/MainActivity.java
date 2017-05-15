@@ -9,11 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import static com.android.android.quizzapp.R.id.editTextPlayer;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    public static String EXTRA_MESSAGE;
 
     /**
      * @param savedInstanceState create an Activity where it define Method, onClickListener and object declaration
@@ -31,10 +32,7 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // Set player name
-        final EditText etPlayer = (EditText) findViewById(editTextPlayer);
-
-        // Launch web browser source url
+        // Call an onClickListener method and Launch web browser source url
         TextView textView = (TextView) findViewById(R.id.source_url);
 
         textView.setOnClickListener(new View.OnClickListener() {
@@ -49,11 +47,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Create an intent to pass string user input to QuizzActivity
-        final Intent myIntent = new Intent(getApplicationContext(), QuizzActivity.class);
-        myIntent.putExtra("playerName", etPlayer.getText().toString());
-
-        // Create an onClickListener method
+        // Call when the user taps the let'sgo button
+        // Call intent to pass input string to QuizzActivity
         // Check if user has input his name and launch the QuizzActivity or display a Toast message
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
 
                 // Create an intent to open the {@link QuizzActivity}
                 Intent buttonIntent = new Intent(MainActivity.this, QuizzActivity.class);
+
+                // Set player name
+                EditText etPlayer = (EditText) findViewById(editTextPlayer);
+                String playerName = etPlayer.getText().toString();
+
+                // Create an intent to pass string user input to QuizzActivity
+                Intent myIntent = new Intent(MainActivity.this, QuizzActivity.class);
+                myIntent.putExtra(EXTRA_MESSAGE, playerName);
+
                 //check player is not empty, start QuizzActivity else display a Toast message
                 if ((etPlayer.getText().toString().equals(""))) {
                     Toast.makeText(getApplicationContext(), getString(R.string.OOpS), Toast.LENGTH_SHORT).show();

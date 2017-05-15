@@ -4,28 +4,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizzActivity extends AppCompatActivity {
 
     int score = 0;
-    String player;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizz);
 
-        // Get String input player from MAinActivity
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String value = extras.getString("playerName");
-            //player = value.toString();
-        }
+        // Get the Intent that started this activity and extract the string
+        Intent intent = getIntent();
+        String playerName = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        // Capture the layout's TextView and set the string as its text
+        ViewGroup layout = (ViewGroup) findViewById(R.id.player_name);
+        TextView tv = new TextView(this);
+        tv.setText(playerName);
+        layout.addView(tv);
+
 
         /*
          * button setOnClickListener startActivity SolutionActivity
@@ -123,7 +127,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
 
                 //Display Toast message with the score
-                Toast.makeText(QuizzActivity.this, player + " " + getString(R.string.yourScore) + " " + score + " " + getString(R.string.point), Toast.LENGTH_LONG).show();
+                Toast.makeText(QuizzActivity.this, getString(R.string.yourScore) + " " + score + " " + getString(R.string.point), Toast.LENGTH_LONG).show();
             }
         });
     }

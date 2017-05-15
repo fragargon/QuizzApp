@@ -7,6 +7,17 @@
 
     <LinearLayout style="@style/linear_layout_quizz">
 
+        <RelativeLayout style="@style/relative_layout_quizz"
+            android:id="@+id/player_name">
+
+            <TextView
+                style="@style/textView_layout_quizz"
+                android:id="@+id/player_name_text"
+                android:textSize="24sp"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
         <RelativeLayout style="@style/relative_layout_quizz">
 
             <!-- Question 1-->
@@ -17,7 +28,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ1"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q1" />
 
                 <RadioButton
@@ -53,7 +64,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ2"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q2" />
 
                 <RadioButton
@@ -79,7 +90,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ3"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q3" />
 
                 <RadioButton
@@ -113,7 +124,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ4"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q4" />
 
                 <CheckBox
@@ -147,7 +158,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ5"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q5" />
 
                 <CheckBox
@@ -181,7 +192,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ6"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q6" />
 
                 <TextView
@@ -210,7 +221,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ7"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q7" />
 
                 <CheckBox
@@ -247,7 +258,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ8"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q8" />
 
                 <RadioButton
@@ -281,7 +292,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ9"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q9" />
 
                 <TextView
@@ -312,7 +323,7 @@
 
                 <TextView
                     android:id="@+id/textViewQ10"
-                    style="@style/textView_layoutquizz"
+                    style="@style/textView_layout_quizz"
                     android:text="@string/Q10" />
 
                 <RadioButton
