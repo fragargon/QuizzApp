@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import static com.android.android.quizzapp.R.id.editTextPlayer;
 
 
@@ -53,25 +54,20 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
+            // Set player name
+            EditText etPlayer = (EditText) findViewById(editTextPlayer);
+
             @Override
             public void onClick(View view) {
 
-                // Create an intent to open the {@link QuizzActivity}
-                Intent buttonIntent = new Intent(MainActivity.this, QuizzActivity.class);
-
-                // Set player name
-                EditText etPlayer = (EditText) findViewById(editTextPlayer);
-                String playerName = etPlayer.getText().toString();
-
-                // Create an intent to pass string user input to QuizzActivity
+                // Call an intent to pass string playerName and start QuizzActivity
                 Intent myIntent = new Intent(MainActivity.this, QuizzActivity.class);
-                myIntent.putExtra(EXTRA_MESSAGE, playerName);
+                myIntent.putExtra(EXTRA_MESSAGE, etPlayer.getText().toString());
 
-                //check player is not empty, start QuizzActivity else display a Toast message
+                // Check player is not empty, start QuizzActivity else display a Toast message
                 if ((etPlayer.getText().toString().equals(""))) {
                     Toast.makeText(getApplicationContext(), getString(R.string.OOpS), Toast.LENGTH_SHORT).show();
                 } else {
-                    startActivity(buttonIntent);
                     startActivity(myIntent);
                 }
             }

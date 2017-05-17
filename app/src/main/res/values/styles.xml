@@ -136,25 +136,15 @@
         <item name="android:layout_marginTop">@dimen/margin</item>
     </style>
 
-    <!-- Style apply in solution_quizz-->
+    <!-- Style apply inflate TextView-->
 
-    <style name="textView_solution">
+    <style name="textView_inflate">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:gravity">center</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textStyle">italic</item>
-    </style>
-
-    <style name="linear_layout_solution">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:layout_margin">@dimen/margin</item>
-        <item name="android:background">@drawable/rect_backg</item>
-        <item name="android:padding">@dimen/margin</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
     </style>
 
 </resources>

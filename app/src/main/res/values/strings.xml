@@ -13,11 +13,13 @@
     <string name="OOpS"> OOps, type your name pls.</string>
     <string name="yourScore">your score is</string>
     <string name="point">from a total of 10 points</string>
+    <string name="ok">OK</string>
+    <string name="give_answer">answer the questions!</string>
 
     // Java Quizz related found in https://www.tutorialspoint.com/java/java_online_quiz.htm//
     <string name="source">https://www.tutorialspoint.com/java/java_online_quiz.htm</string>
     <string name="quizzLayout">Quizz</string>
-    <string name="done">done</string>
+    <string name="review">Review</string>
 
     <string name="Q1">Q 1 - What of the following is the default value of an instance variable?</string>
     <string name="Q2">Q 2 - Can we have two public classes in one java file?</string>

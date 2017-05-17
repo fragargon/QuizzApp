@@ -7,14 +7,13 @@
 
     <LinearLayout style="@style/linear_layout_quizz">
 
-        <RelativeLayout style="@style/relative_layout_quizz"
-            android:id="@+id/player_name">
+        <!-- Player Name inflated-->
+
+        <RelativeLayout style="@style/relative_layout_quizz">
 
             <TextView
-                style="@style/textView_layout_quizz"
-                android:id="@+id/player_name_text"
-                android:textSize="24sp"
-                android:gravity="center"/>
+                android:id="@+id/player_name"
+                style="@style/textView_inflate"/>
 
         </RelativeLayout>
 
@@ -350,11 +349,10 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/buttonDone"
+            android:id="@+id/buttonReview"
             style="@style/quizz_button"
             android:layout_gravity="center"
-            android:onClick="submit"
-            android:text="@string/done" />
+            android:text="@string/review" />
 
     </LinearLayout>
 

@@ -19,8 +19,6 @@
         <activity
             android:name=".QuizzActivity"
             android:label="@string/quizzLayout" />
-        <activity android:name=".SolutionActivity"
-            android:label="@string/answerQuizz"/>
     </application>
 
 </manifest>
