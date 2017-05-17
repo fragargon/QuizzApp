@@ -13,8 +13,6 @@
     <string name="OOpS"> OOps, type your name pls.</string>
     <string name="yourScore">your score is</string>
     <string name="point">from a total of 10 points</string>
-    <string name="ok">OK</string>
-    <string name="give_answer">answer the questions!</string>
 
     // Java Quizz related found in https://www.tutorialspoint.com/java/java_online_quiz.htm//
     <string name="source">https://www.tutorialspoint.com/java/java_online_quiz.htm</string>

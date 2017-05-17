@@ -45,10 +45,9 @@ public class QuizzActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                // Sent score if submit button is pressed in the layout up he screen
                 TextView tv = (TextView) findViewById(R.id.player_name);
-                tv.setText(playerName);
-
-                //TODO define intent mail
+                tv.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
 
                 // Check the right RadioButton was selected question 1
                 RadioButton rbAnswer1C = (RadioButton) findViewById(R.id.radioButtonQ1C);
@@ -156,6 +155,10 @@ public class QuizzActivity extends AppCompatActivity {
                     // Change color text in green right answer
                     rbAnswer10B.setTextColor(rgb(45, 121, 40));
                 }
+
+                //Prevents the Submit method from being pressed more than once
+                Button myButton = (Button) findViewById(R.id.buttonReview);
+                myButton.setClickable(false);
 
                 //Display Toast message with the score
                 Toast.makeText(QuizzActivity.this, playerName + " " + getString(R.string.yourScore) + " " + score + " " + getString(R.string.point), Toast.LENGTH_LONG).show();
