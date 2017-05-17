@@ -33,35 +33,43 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // Call an onClickListener method and Launch web browser source url
+        // Find the View that shows the string URL
         TextView textView = (TextView) findViewById(R.id.source_url);
 
+        // Set a click listener on that View
         textView.setOnClickListener(new View.OnClickListener() {
+
+            // The code in this method will be executed when the text is clicked
             @Override
             public void onClick(View view) {
+
                 // Create an implicit intent to launch a web browser
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tutorialspoint.com/java/java_online_quiz.htm"));
                 if (browserIntent.resolveActivity(getPackageManager()) != null) {
-                    // Start the intent
+
+                    // Start the activity
                     startActivity(browserIntent);
                 }
             }
         });
 
-        // Call when the user taps the let'sgo button
-        // Call intent to pass input string to QuizzActivity
-        // Check if user has input his name and launch the QuizzActivity or display a Toast message
+        // Find the View that shows the Button
         Button button = (Button) findViewById(R.id.button);
+
+        // Set a click listener on that View
         button.setOnClickListener(new View.OnClickListener() {
 
             // Set player name
             EditText etPlayer = (EditText) findViewById(editTextPlayer);
 
+            // The code in this method will be executed when the Button is clicked
             @Override
             public void onClick(View view) {
 
-                // Call an intent to pass string playerName and start QuizzActivity
+                // Create an intent to open the {@link QuizzActivity}
                 Intent myIntent = new Intent(MainActivity.this, QuizzActivity.class);
+
+                // Send an EXTRA_MESSAGE player name
                 myIntent.putExtra(EXTRA_MESSAGE, etPlayer.getText().toString());
 
                 // Check player is not empty, start QuizzActivity else display a Toast message

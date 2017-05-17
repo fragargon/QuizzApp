@@ -13,7 +13,12 @@
 
             <TextView
                 android:id="@+id/player_name"
-                style="@style/textView_inflate"/>
+                style="@style/textView_inflate" />
+
+            <TextView
+                android:id="@+id/hit_me"
+                style="@style/textView_inflate"
+                android:layout_below="@+id/player_name" />
 
         </RelativeLayout>
 
