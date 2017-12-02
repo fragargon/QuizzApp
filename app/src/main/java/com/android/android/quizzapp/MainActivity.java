@@ -2,8 +2,8 @@ package com.android.android.quizzapp;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,13 +58,39 @@ public class MainActivity extends AppCompatActivity {
 
         // Set a click listener on that View
         button.setOnClickListener(new View.OnClickListener() {
+         // Set player name
+           EditText etPlayer = (EditText) findViewById(editTextPlayer);
+
+            // The code in this method will be executed when the Button is clicked
+           @Override
+           public void onClick(View view) {
+
+                // Create an intent to open the {@link QuizzActivity}
+                Intent myIntent = new Intent(MainActivity.this, QuizzActivity.class);
+
+                // Send an EXTRA_MESSAGE player name
+                myIntent.putExtra(EXTRA_MESSAGE, etPlayer.getText().toString());
+
+               // Check player is not empty, start QuizzActivity else display a Toast message
+                if ((etPlayer.getText().toString().equals(""))) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.OOpS), Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(myIntent);
+                }
+            }
+        });
+
+
+
+
+
+        button.setOnClickListener( view -> {
 
             // Set player name
             EditText etPlayer = (EditText) findViewById(editTextPlayer);
 
             // The code in this method will be executed when the Button is clicked
-            @Override
-            public void onClick(View view) {
+
 
                 // Create an intent to open the {@link QuizzActivity}
                 Intent myIntent = new Intent(MainActivity.this, QuizzActivity.class);
@@ -78,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     startActivity(myIntent);
                 }
-            }
+
         });
     }
 }
