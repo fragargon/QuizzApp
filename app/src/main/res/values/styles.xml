@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">#72d6ec</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@android:color/holo_red_dark</item>
     </style>
@@ -22,10 +23,11 @@
     </style>
 
     <style name="main_textView">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/rect_backg_question</item>
-        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">4dp</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:textSize">36sp</item>
     </style>
