@@ -5,7 +5,6 @@
 
     <string name="welcome">Welcome</string>
     <string name="quizz">Java Quizz Game</string>
-    <string name="answerQuizz">Java Quizz Game\'s Answer</string>
     <string name="name">type your name</string>
     <string name="go">let\'s go</string>
     <string name="image_desc">image</string>
@@ -37,74 +36,50 @@
     <string name="Q1B">0</string>
     <string name="Q1C">Depends upon the type of variable</string>
     <string name="Q1D">Not assigned</string>
-    <string name="Q1answer">Answer : C </string>
-    <string name="Q1explain">Explanation: Instance variables are assigned default values based on their types. For example, int variable is assigned 0 and an object type variable is assigned null as default value.</string>
 
     // Context question 2
     <string name="Q2A">True</string>
     <string name="Q2B">False</string>
-    <string name="Q2answer">Answer : B</string>
-    <string name="Q2explain">Explanation: No, a java file can contain only one public class.</string>
 
     // Context question 3
     <string name="Q3A">0.0</string>
     <string name="Q3B">0</string>
     <string name="Q3C">null</string>
     <string name="Q3D">not defined</string>
-    <string name="Q3answer">Answer : B</string>
-    <string name="Q3explain">Explanation: short variable has default value of 0 if defined as an instance/static variable.</string>
 
     //Context question 4
     <string name="Q4A">By default, variables, methods and constructors can be accessed by subclass only.</string>
     <string name="Q4B">By default, variables, methods and constructors can be accessed by any class lying in any package</string>
     <string name="Q4C">By default, variables, methods and constructors can be accessed by any class lying in the same package.</string>
     <string name="Q4D">None of the above.</string>
-    <string name="Q4answer">Answer : A,B,D</string>
-    <string name="Q4explain">Explanation: By default, variables, methods and constructors can be accessed by any class lying in the same package.</string>
 
     // Context question 5
-    <string name="Q5A">Variables defined inside methods, constructors or blocks are called local variables.</string>
     <string name="Q5B">Variables defined outside methods, constructors or blocks are called local variables.</string>
     <string name="Q5C">Static variables defined outside methods, constructors or blocks are called local variables.</string>
-    <string name="Q5D">None of the above.</string>
-    <string name="Q5answer">Answer : B,C,D</string>
-    <string name="Q5explain">Explanation: Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and it will be destroyed when the method has completed.</string>
 
     // Context question 6
     <string name="Q6A">HAS-A relationship</string>
     <string name="Q6B">IS-A relationship</string>
-    <string name="Q6answer">Answer : A</string>
-    <string name="Q6explain">Explanation: Holding the reference of the other class within some other class is known as composition. It represents a HAS-A relationship. For example, a Student has a Pen. Here Student class has Pen as its instance variable.</string>
 
     // Context question 7
     <string name="Q7A">Static Binding.</string>
     <string name="Q7B">Dynamic Binding.</string>
     <string name="Q7C">Both of the above.</string>
     <string name="Q7D">None of the above.</string>
-    <string name="Q7answer">Answer : B,C,D</string>
-    <string name="Q7explain">Explanation: Method Overloading is example of static binding.</string>
 
     // Context question 8
     <string name="Q8A">Serialization is the process of writing the state of an object to another object.</string>
     <string name="Q8B">Serialization is the process of writing the state of an object to a byte stream.</string>
-    <string name="Q8C">Both of the above.</string>
-    <string name="Q8D">None of the above.</string>
-    <string name="Q8answer">Answer : B</string>
-    <string name="Q8explain">Explanation: Serialization is the process of writing the state of an object to a byte stream.</string>
 
     // Context question 9
     <string name="Q9A">True</string>
     <string name="Q9B">False</string>
-    <string name="Q9answer">Answer : B</string>
-    <string name="Q9explain">Explanation: No, a top level class can not be private or protected. It can have either "public" or no modifier.</string>
 
     // Context question 10
     <string name="Q10A">StringBuilder</string>
     <string name="Q10B">StringBuffer</string>
     <string name="Q10C">Both of the above</string>
     <string name="Q10D">none of the above</string>
-    <string name="Q10answer">Answer : B</string>
-    <string name="Q10explain">StringBuffer is thread safe.</string>
 
 
 </resources>

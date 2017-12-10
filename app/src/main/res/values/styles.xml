@@ -8,17 +8,17 @@
         <item name="colorAccent">@android:color/holo_red_dark</item>
     </style>
 
-    <!-- Style apply in activity_main-->
+    <!-- Style apply in activity_main PortraitMode-->
 
     <style name="main_image">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_weight">0.75</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
-        <item name="android:layout_marginBottom">@dimen/margin</item>
+        <item name="android:layout_marginLeft">@dimen/margin8</item>
+        <item name="android:layout_marginRight">@dimen/margin8</item>
+        <item name="android:layout_marginTop">@dimen/margin8</item>
+        <item name="android:layout_marginBottom">@dimen/margin8</item>
     </style>
 
     <style name="main_textView">
@@ -35,17 +35,17 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginBottom">@dimen/margin</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/buttonMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/margin8</item>
+        <item name="android:layout_marginLeft">@dimen/margin8</item>
+        <item name="android:layout_marginRight">@dimen/margin8</item>
+        <item name="android:layout_marginTop">@dimen/margin64</item>
     </style>
 
     <style name="editText_main">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
+        <item name="android:layout_marginLeft">@dimen/margin8</item>
+        <item name="android:layout_marginRight">@dimen/margin8</item>
         <item name="android:layout_marginTop">80dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
@@ -56,10 +56,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginBottom">@dimen/margin</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/urlMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/margin8</item>
+        <item name="android:layout_marginLeft">@dimen/margin8</item>
+        <item name="android:layout_marginRight">@dimen/margin8</item>
+        <item name="android:layout_marginTop">@dimen/margin64</item>
         <item name="android:textColor">@android:color/holo_red_dark</item>
         <item name="android:autoLink">web</item>
         <item name="android:textSize">14sp</item>
@@ -82,9 +82,9 @@
     <style name="relative_layout_quizz">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:layout_margin">@dimen/margin8</item>
         <item name="android:background">@drawable/rect_backg</item>
-        <item name="android:padding">@dimen/margin</item>
+        <item name="android:padding">@dimen/margin8</item>
     </style>
 
     <style name="textView_layout_quizz">
@@ -99,7 +99,7 @@
     <style name="editText_layoutquizz">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_marginTop">@dimen/margin8</item>
     </style>
 
     <style name="radio_group">
@@ -122,9 +122,9 @@
     <style name="editText_question">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_marginLeft">@dimen/margin8</item>
+        <item name="android:layout_marginRight">@dimen/margin8</item>
+        <item name="android:layout_marginTop">@dimen/margin8</item>
         <item name="android:gravity">center</item>
         <item name="android:maxLines">1</item>
         <item name="android:inputType">text</item>
@@ -134,10 +134,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginBottom">@dimen/margin</item>
-        <item name="android:layout_marginLeft">@dimen/margin</item>
-        <item name="android:layout_marginRight">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_marginBottom">@dimen/margin8</item>
+        <item name="android:layout_marginLeft">@dimen/margin8</item>
+        <item name="android:layout_marginRight">@dimen/margin8</item>
+        <item name="android:layout_marginTop">@dimen/margin8</item>
     </style>
 
     <!-- Style apply inflate TextView-->
