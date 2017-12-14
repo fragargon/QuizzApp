@@ -16,12 +16,36 @@ import static android.graphics.Color.rgb;
 
 public class QuizzActivity extends AppCompatActivity {
 
+    /**
+     *  Define constant KEY to store the score value on configuration change
+     */
+
+    public static final String KEY_SCORE = "scoreSaved";
+
+    @Override
+            protected void onSaveInstanceState(Bundle oustate) {
+        super.onSaveInstanceState(oustate);
+        oustate.putInt(KEY_SCORE, score);
+    }
+
+    // Define a string variable for user input result
+
     int score = 0;
+
+    /**
+     *@param savedInstanceState
+     */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizz);
+
+        // Save instance variable score in case value change
+
+        if(savedInstanceState != null) {
+            score = savedInstanceState.getInt(KEY_SCORE);
+        }
 
         // Call the Intent that started this activity and extract the string
         Intent intent = getIntent();
