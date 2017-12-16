@@ -3,6 +3,7 @@ package com.android.android.quizzapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +16,9 @@ import android.widget.Toast;
 import static android.graphics.Color.rgb;
 
 public class QuizzActivity extends AppCompatActivity {
+    
+    // Declare a TAG for debugging purpose
+    private static final  String TAG = "QuizzApp";
 
     /**
      *  Define constant KEY to store the score value on configuration change
@@ -22,15 +26,16 @@ public class QuizzActivity extends AppCompatActivity {
 
     public static final String KEY_SCORE = "scoreSaved";
 
-    @Override
-            protected void onSaveInstanceState(Bundle oustate) {
-        super.onSaveInstanceState(oustate);
-        oustate.putInt(KEY_SCORE, score);
+    @Override protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_SCORE, score);
     }
 
     // Define a string variable for user input result
 
-    int score = 0;
+    int score;
+    String playerName;
+
 
     /**
      *@param savedInstanceState
@@ -45,6 +50,10 @@ public class QuizzActivity extends AppCompatActivity {
 
         if(savedInstanceState != null) {
             score = savedInstanceState.getInt(KEY_SCORE);
+            customObj();
+        } else {
+            score = 0;
+            playerName ="";
         }
 
         // Call the Intent that started this activity and extract the string
@@ -94,7 +103,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     rbAnswer1C.setTextColor(rgb(213, 0, 0));
                 }
 
@@ -104,7 +113,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     rbAnswer2B.setTextColor(rgb(213, 0, 0));
                 }
 
@@ -114,7 +123,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     rbAnswer3B.setTextColor(rgb(213, 0, 0));
                 }
 
@@ -127,7 +136,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     cbAnswer4A.setTextColor(rgb(213, 0, 0));
                     cbAnswer4B.setTextColor(rgb(213, 0, 0));
                     cbAnswer4D.setTextColor(rgb(213, 0, 0));
@@ -142,7 +151,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     cbAnswer5A.setTextColor(rgb(213, 0, 0));
                     cbAnswer5B.setTextColor(rgb(213, 0, 0));
                     cbAnswer5D.setTextColor(rgb(213, 0, 0));
@@ -154,7 +163,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     etAnswer6.setText(getString(R.string.Q6A));
                     etAnswer6.setTextColor(rgb(213, 0, 0));
                 }
@@ -168,7 +177,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     cbAnswer7A.setTextColor(rgb(213, 0, 0));
                     cbAnswer7B.setTextColor(rgb(213, 0, 0));
                     cbAnswer7D.setTextColor(rgb(213, 0, 0));
@@ -180,7 +189,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     rbAnswer8B.setTextColor(rgb(213, 0, 0));
                 }
 
@@ -190,7 +199,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     etAnswer9.setText(getString(R.string.Q9B));
                     etAnswer9.setTextColor(rgb(213, 0, 0));
                 }
@@ -201,7 +210,7 @@ public class QuizzActivity extends AppCompatActivity {
                     score += 1;
                 } else {
 
-                    // Change color text in green right answer
+                    // Change color text in red right answer
                     rbAnswer10B.setTextColor(rgb(213, 0, 0));
                 }
 
@@ -210,14 +219,24 @@ public class QuizzActivity extends AppCompatActivity {
                 myButton.setClickable(false);
 
                 // Sent score and the player name if submit button is pressed in the layout up he screen
-                TextView tv = (TextView) findViewById(R.id.player_name);
-                tv.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
-                TextView tv1 = (TextView) findViewById(R.id.hit_me);
-                tv1.setText(getString(R.string.hit));
+                TextView tv1 = (TextView) findViewById(R.id.player_name);
+                tv1.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
+                TextView tv2 = (TextView) findViewById(R.id.hit_me);
+                tv2.setText(getString(R.string.hit));
 
                 //Display Toast message with the score
                 Toast.makeText(QuizzActivity.this, playerName + " " + getString(R.string.yourScore) + " " + score + " " + getString(R.string.point), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    //Create a custom Method so tv1 and tv2 can be restore in configuration change
+    public void customObj (){
+        // Sent score and the player name if submit button is pressed in the layout up he screen
+        TextView tv1 = (TextView) findViewById(R.id.player_name);
+        tv1.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
+        Log.d(TAG, "customObj() returned: " + isChangingConfigurations());
+        TextView tv2 = (TextView) findViewById(R.id.hit_me);
+        tv2.setText(getString(R.string.hit));
     }
 }
