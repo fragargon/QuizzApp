@@ -17,17 +17,18 @@ import static android.graphics.Color.rgb;
 
 public class QuizzActivity extends AppCompatActivity {
 
-    /**
-     * Define constant KEY to store the score value on configuration change
-     */
-
     public static final String KEY_SCORE = "scoreSaved";
     // Declare a TAG for debugging purpose
     private static final String TAG = "QuizzApp";
-    int score;
 
     // Define a string variable for user input result
     String playerName;
+    int score;
+
+    /**
+     *
+     * @param outState to restore previous state in orientation change
+     */
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -37,7 +38,7 @@ public class QuizzActivity extends AppCompatActivity {
 
     //Create a custom Method so tv1 and tv2 can be restore in configuration change
     public void customObj() {
-        // Sent score and the player name if submit button is pressed in the layout up he screen
+        // Sent score and the player name when submit button is pressed in the layout up he screen
         TextView tv1 = (TextView) findViewById(R.id.player_name);
         tv1.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
         Log.d(TAG, "customObj() returned: " + isChangingConfigurations());
@@ -46,7 +47,11 @@ public class QuizzActivity extends AppCompatActivity {
     }
 
     /**
-     * @param savedInstanceState
+     * @param savedInstanceState get the string EXTRA_MESSAGE from MainActivity
+     *                           set text views with right message
+     *                           create an onClickListener on TextView hit_me to restart the game
+     *                           create an onClickListener to give review the answers and give score
+     *                           popup a toast message
      */
 
     @Override
@@ -54,45 +59,39 @@ public class QuizzActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizz);
 
-        // Save instance variable score in case value change
-
-        if (savedInstanceState != null) {
-            score = savedInstanceState.getInt(KEY_SCORE);
-            customObj();
-        } else {
-            score = 0;
-            playerName = "";
-        }
-
         // Call the Intent that started this activity and extract the string
         Intent intent = getIntent();
         final String playerName = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-
         // Capture the layout's TextView and set the string as its text
         TextView tv = (TextView) findViewById(R.id.player_name);
         tv.setText(playerName + " " + getString(R.string.lets));
 
         // Find the View that shows the string hit_me
         TextView playAgain = (TextView) findViewById(R.id.hit_me);
-
         // Set a click listener on that View
         playAgain.setOnClickListener(new View.OnClickListener() {
 
             // The code in this method will be executed when the text is clicked
             @Override
             public void onClick(View v) {
-
                 // Create an intent to open the {@link MainActivity}
                 Intent playAgain = new Intent(QuizzActivity.this, MainActivity.class);
-
                 // Start the activity
                 startActivity(playAgain);
             }
         });
 
+        // Save instance variable score in case value change
+        if (savedInstanceState != null) {
+            score = savedInstanceState.getInt(KEY_SCORE);
+            customObj();
+        } else {
+            score = 0;
+            tv.setText(playerName + " " + getString(R.string.lets));;
+        }
+
         // Find the View that shows the string hit_me
         Button button = (Button) findViewById(R.id.buttonReview);
-
         // Set a click listener on that Button
         button.setOnClickListener(new View.OnClickListener() {
 
