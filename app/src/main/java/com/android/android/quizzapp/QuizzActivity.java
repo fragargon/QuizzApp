@@ -16,29 +16,37 @@ import android.widget.Toast;
 import static android.graphics.Color.rgb;
 
 public class QuizzActivity extends AppCompatActivity {
-    
-    // Declare a TAG for debugging purpose
-    private static final  String TAG = "QuizzApp";
 
     /**
-     *  Define constant KEY to store the score value on configuration change
+     * Define constant KEY to store the score value on configuration change
      */
 
     public static final String KEY_SCORE = "scoreSaved";
+    // Declare a TAG for debugging purpose
+    private static final String TAG = "QuizzApp";
+    int score;
 
-    @Override protected void onSaveInstanceState(Bundle outState) {
+    // Define a string variable for user input result
+    String playerName;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_SCORE, score);
     }
 
-    // Define a string variable for user input result
-
-    int score;
-    String playerName;
-
+    //Create a custom Method so tv1 and tv2 can be restore in configuration change
+    public void customObj() {
+        // Sent score and the player name if submit button is pressed in the layout up he screen
+        TextView tv1 = (TextView) findViewById(R.id.player_name);
+        tv1.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
+        Log.d(TAG, "customObj() returned: " + isChangingConfigurations());
+        TextView tv2 = (TextView) findViewById(R.id.hit_me);
+        tv2.setText(getString(R.string.hit));
+    }
 
     /**
-     *@param savedInstanceState
+     * @param savedInstanceState
      */
 
     @Override
@@ -48,12 +56,12 @@ public class QuizzActivity extends AppCompatActivity {
 
         // Save instance variable score in case value change
 
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             score = savedInstanceState.getInt(KEY_SCORE);
             customObj();
         } else {
             score = 0;
-            playerName ="";
+            playerName = "";
         }
 
         // Call the Intent that started this activity and extract the string
@@ -228,15 +236,5 @@ public class QuizzActivity extends AppCompatActivity {
                 Toast.makeText(QuizzActivity.this, playerName + " " + getString(R.string.yourScore) + " " + score + " " + getString(R.string.point), Toast.LENGTH_LONG).show();
             }
         });
-    }
-
-    //Create a custom Method so tv1 and tv2 can be restore in configuration change
-    public void customObj (){
-        // Sent score and the player name if submit button is pressed in the layout up he screen
-        TextView tv1 = (TextView) findViewById(R.id.player_name);
-        tv1.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
-        Log.d(TAG, "customObj() returned: " + isChangingConfigurations());
-        TextView tv2 = (TextView) findViewById(R.id.hit_me);
-        tv2.setText(getString(R.string.hit));
     }
 }
