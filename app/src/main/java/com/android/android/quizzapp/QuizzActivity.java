@@ -3,7 +3,6 @@ package com.android.android.quizzapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,9 +16,8 @@ import static android.graphics.Color.rgb;
 
 public class QuizzActivity extends AppCompatActivity {
 
+    // Declare a static final variable to restore value on configuration change
     public static final String KEY_SCORE = "scoreSaved";
-    // Declare a TAG for debugging purpose
-    private static final String TAG = "QuizzApp";
 
     // Define a string variable for user input result
     String playerName;
@@ -41,7 +39,6 @@ public class QuizzActivity extends AppCompatActivity {
         // Sent score and the player name when submit button is pressed in the layout up he screen
         TextView tv1 = (TextView) findViewById(R.id.player_name);
         tv1.setText(playerName + " " + getString(R.string.yourScore) + " " + score);
-        Log.d(TAG, "customObj() returned: " + isChangingConfigurations());
         TextView tv2 = (TextView) findViewById(R.id.hit_me);
         tv2.setText(getString(R.string.hit));
     }
@@ -87,7 +84,7 @@ public class QuizzActivity extends AppCompatActivity {
             customObj();
         } else {
             score = 0;
-            tv.setText(playerName + " " + getString(R.string.lets));;
+            tv.setText(playerName + " " + getString(R.string.lets));
         }
 
         // Find the View that shows the string hit_me
