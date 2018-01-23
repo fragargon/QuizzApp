@@ -18,7 +18,6 @@ public class QuizzActivity extends AppCompatActivity {
 
     // Declare a static final variable to restore value on configuration change
     public static final String KEY_SCORE = "scoreSaved";
-    public static final String KEY_PLAYER_NAME = "playerNameSaved";
 
     // Define a string variable for user input result
     String playerName;
@@ -42,7 +41,6 @@ public class QuizzActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_SCORE, score);
-        outState.putString(KEY_PLAYER_NAME, playerName);
     }
 
     //Create a custom Method so tv1 and tv2 can be restore in configuration change
@@ -64,15 +62,6 @@ public class QuizzActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizz);
-
-        // Save instance variable score in case value change
-        if (savedInstanceState != null) {
-            score = savedInstanceState.getInt(KEY_SCORE);
-            customObj();
-        } else {
-            score = 0;
-            tv1.setText(playerName + " " + getString(R.string.lets));
-        }
 
         // Instantiate Ids to find the Views
 
@@ -105,6 +94,15 @@ public class QuizzActivity extends AppCompatActivity {
         String playerName = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         // Capture the layout's TextView and set the string as its text
         tv1.setText(playerName + " " + getString(R.string.lets));
+
+        // Save instance variable score in case value change
+        if (savedInstanceState != null) {
+            score = savedInstanceState.getInt(KEY_SCORE);
+            customObj();
+        } else {
+            score = 0;
+            tv1.setText(playerName + " " + getString(R.string.lets));
+        }
 
         // Set a click listener on that View
         tv2.setOnClickListener(new View.OnClickListener() {
