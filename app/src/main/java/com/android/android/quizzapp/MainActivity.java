@@ -80,9 +80,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+        // launch the next activity QuizzAcitivity, create an Intent and save to pass through etPlayer String
+        // to the nex activity with constant var, show a toast message if etPlayer is null
 
         button.setOnClickListener( view -> {
 

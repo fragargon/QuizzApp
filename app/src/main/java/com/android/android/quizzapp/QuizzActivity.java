@@ -18,6 +18,7 @@ public class QuizzActivity extends AppCompatActivity {
 
     // Declare a static final variable to restore value on configuration change
     public static final String KEY_SCORE = "scoreSaved";
+    public static final String KEY_PLAYER_NAME = "playerNameSaved";
 
     // Define a string variable for user input result
     String playerName;
@@ -41,6 +42,7 @@ public class QuizzActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_SCORE, score);
+        outState.putString(KEY_PLAYER_NAME, playerName);
     }
 
     //Create a custom Method so tv1 and tv2 can be restore in configuration change
@@ -62,6 +64,15 @@ public class QuizzActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizz);
+
+        // Save instance variable score in case value change
+        if (savedInstanceState != null) {
+            score = savedInstanceState.getInt(KEY_SCORE);
+            customObj();
+        } else {
+            score = 0;
+            tv1.setText(playerName + " " + getString(R.string.lets));
+        }
 
         // Instantiate Ids to find the Views
 
@@ -89,9 +100,9 @@ public class QuizzActivity extends AppCompatActivity {
         tv1 = (TextView) findViewById(R.id.player_name);
         tv2 = (TextView) findViewById(R.id.hit_me);
 
-        // Call the Intent that started this activity and extract the string
+        // Call the Intent that store the String EXTRA_MESSAGE and set the string to the right View
         Intent intent = getIntent();
-        final String playerName = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String playerName = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         // Capture the layout's TextView and set the string as its text
         tv1.setText(playerName + " " + getString(R.string.lets));
 
@@ -106,15 +117,6 @@ public class QuizzActivity extends AppCompatActivity {
                 startActivity(playAgain);
             }
         });
-
-        // Save instance variable score in case value change
-        if (savedInstanceState != null) {
-            score = savedInstanceState.getInt(KEY_SCORE);
-            customObj();
-        } else {
-            score = 0;
-            tv1.setText(playerName + " " + getString(R.string.lets));
-        }
 
         // Set a click listener on that Button
         myButton.setOnClickListener(new View.OnClickListener() {
