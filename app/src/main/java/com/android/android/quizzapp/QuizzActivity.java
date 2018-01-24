@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -94,6 +95,8 @@ public class QuizzActivity extends AppCompatActivity {
         String playerName = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         // Capture the layout's TextView and set the string as its text
         tv1.setText(playerName + " " + getString(R.string.lets));
+
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         // Save instance variable score in case value change
         if (savedInstanceState != null) {
