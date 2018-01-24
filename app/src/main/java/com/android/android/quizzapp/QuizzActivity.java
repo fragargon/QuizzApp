@@ -19,13 +19,13 @@ public class QuizzActivity extends AppCompatActivity {
 
     // Declare a static final variable to restore value on configuration change
     public static final String KEY_SCORE = "scoreSaved";
+    public static final String KEY_PLAYER_NAME = "playerNameSaved";
 
     // Define a string variable for user input result
     String playerName;
     int score;
 
     // define variable to find the Views
-
     CheckBox cbAnswer4A, cbAnswer4B, cbAnswer4C, cbAnswer4D, cbAnswer5A, cbAnswer5B, cbAnswer5C, cbAnswer5D, cbAnswer7A, cbAnswer7B, cbAnswer7C, cbAnswer7D;
     RadioButton rbAnswer1C, rbAnswer2B, rbAnswer3B, rbAnswer8B, rbAnswer10B;
     EditText etAnswer6, etAnswer9;
@@ -41,6 +41,7 @@ public class QuizzActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_SCORE, score);
+        outState.getBundle(KEY_PLAYER_NAME);
         outState.putIntArray("ARTICLE_SCROLL_POSITION",
                 new int[]{ sv.getScrollX(), sv.getScrollY()});
     }
@@ -53,6 +54,7 @@ public class QuizzActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         final int[] position = savedInstanceState.getIntArray("ARTICLE_SCROLL_POSITION");
         if(position != null)
+            playerName = savedInstanceState.getString(KEY_PLAYER_NAME);
             score = savedInstanceState.getInt(KEY_SCORE);
             customObj();
             sv.post(() -> sv.scrollTo(position[0], position[1]));
