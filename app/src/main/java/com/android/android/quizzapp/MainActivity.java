@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
      * @param savedInstanceState create an Activity where it define Method, onClickListener and object declaration
      *                           EditText to store input player into a String, it will be used on other Activities
      *                           start an implicit BrowserIntent through URL to the source of this Quizz
-     *                           create an Intent myIntent to pass through a String "playerName" to QuizzApp.class
+     *                           create an Intent myIntent to pass through a String "mEtPlayer" to QuizzApp.class
      *                           start Activity QuizzApp.class through Button onClickListener with is statement
      *                           if player doesn't input his name display a Toast message else start Activity QuizzActivity
      */
@@ -37,19 +37,15 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.source_url);
 
         // Set a click listener on that View
-        textView.setOnClickListener(new View.OnClickListener() {
+        // The code in this method will be executed when the text is clicked
+        textView.setOnClickListener(view -> {
 
-            // The code in this method will be executed when the text is clicked
-            @Override
-            public void onClick(View view) {
+            // Create an implicit intent to launch a web browser
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tutorialspoint.com/java/java_online_quiz.htm"));
+            if (browserIntent.resolveActivity(getPackageManager()) != null) {
 
-                // Create an implicit intent to launch a web browser
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tutorialspoint.com/java/java_online_quiz.htm"));
-                if (browserIntent.resolveActivity(getPackageManager()) != null) {
-
-                    // Start the activity
-                    startActivity(browserIntent);
-                }
+                // Start the activity
+                startActivity(browserIntent);
             }
         });
 
