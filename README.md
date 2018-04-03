@@ -32,7 +32,7 @@ I choose the football.
 
 
 Design and implement an app to track scores between two teams within a basketball game.
-
-![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp.jpeg)![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp_1.jpeg)
+![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp_1.jpeg)
+![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp.jpeg)
 
 
