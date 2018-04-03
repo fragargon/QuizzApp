@@ -27,12 +27,11 @@ Note: When applicable, in the grading logic remember to check that the correct a
 
 ____________
 
-This is a simple app, the goal was to create an app which gave the user the ability to keep track the score of 2 different teams.
-I choose the football.
+The goal was to create an educational app that quizzes a user about a certian topics. I have chosen Java as the topic.
+This app contains 10 quiz questions. The questions may ask to choose one answer from a group of radio buttons, multiple answers from a group of check boxes, or type in an answer.
 
 
 Design and implement an app to track scores between two teams within a basketball game.
-![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp_1.jpeg)
-![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp.jpeg)
 
+![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp.jpeg)![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/QuizzApp_1.jpeg)
 
