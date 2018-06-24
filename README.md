@@ -33,7 +33,7 @@ This app contains 10 quiz questions. The questions may ask to choose one answer 
 
 Design and implement an app to track scores between two teams within a basketball game.
 
-![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp.jpeg)![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp_1.jpeg)
-![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp_2.jpeg)![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp_3.jpeg)
+![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp.jpeg)  ![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp_1.jpeg)  
+![Alt Text](https://github.com/fragargon/QuizzApp/raw/master/quizapp_2.jpeg)  ![Alt Text]     (https://github.com/fragargon/QuizzApp/raw/master/quizapp_3.jpeg)
 
 
